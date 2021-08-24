@@ -1,1 +1,3 @@
-# 6210612575.github.io
+#Anudchana Panyapradit
+#6210612575
+![My Picture](yim.jpg)
