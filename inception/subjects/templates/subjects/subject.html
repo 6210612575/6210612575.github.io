@@ -1,0 +1,60 @@
+{% extends "subjects/layout.html" %}
+
+
+{% block body %}
+    <nav>
+
+    <label class="logo"><a href="{% url 'subjects:index' %}">Subject</a></label>
+    <ul>
+    <li><a class="active" href="https://ide-6bd6267e6ac441ff8a573303d9997bd7-8080.cs50.ws/">HOME</a></li>
+
+    <li><a href="{% url 'subjects:Course' %}">course</a></li>
+    </ul>
+    </nav><br>
+    <center><h2>SUBJECT  {{ subject.subject_code }}</h2></center>
+    <br><br>
+    <center><TABLE>
+            <thead>
+            <TR>
+                <TH> Subject ID</TH>
+                <TH> Subject Name</TH>
+                <TH> Semester </TH>
+                <th> Year </th>
+                <th> Seat </th>
+            </TR>
+            </thead>
+                <TD>{{ subject.subject_code }}</TD>
+                <TD>{{ subject.subject_name }}</TD>
+                <TD>{{ subject.semester }}</TD>
+                <TD>{{ subject.year  }}</TD>
+                <TD>{{ subject.seat }}</TD>
+
+                </TABLE></center>
+
+    <br><br><br>
+
+    <center>
+
+    <a href ="{% url 'subjects:enroll' subject.id %}">
+        {% if subject.seat is 0 %}
+            <button class="button button1" onclick="alert('ลงทะเบียนไม่สำเร็จ')">enroll</button>
+        {% elif user  in subject.studentInClass.all %}
+        {% else %}
+            <button class="button button1" onclick="alert('ลงทะเบียนสำเร็จ')">enroll </button>
+        {% endif %}
+    </a>
+
+    <a href ="{% url 'subjects:drop' subject.id %}">
+        {% if subject.status is full %}
+    <button class="button button3" onclick="alert('ถอนวิชาไม่สำเร็จ')">withdraw</button>
+        {% elif user  not in subject.studentInClass.all %}
+        {% else %}
+    <button class="button button3" onclick="alert('ถอนวิชาสำเร็จ')">withdraw</button>
+        {% endif %}
+    </a>
+
+    <a href="{% url 'subjects:index' %}">
+    <button class="button button5" >back</button>
+    </a> </center>
+
+{% endblock %}

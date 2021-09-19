@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+{% if user.is_authenticated %}
+
+<nav>
+<header>
+<h1 class="logo">Welcome {{ user.username }}</h1>
+
+ <br>
+
+    {% if user.username == "admin" %}
+        <br><br><br>
+        <a class="logout" href="{% url 'logout' %}"><button>Logout</button></a>
+
+     {% else %}
+
+     <ul class="nav_links">
+         <br>
+
+        </ul>
+        <a class="logout" href="{% url 'logout' %}"><button>Logout</button></a>
+
+     {% endif %}
+     </header>
+     </nav>
+     <br><br><br><br>
+     <h2> Please select your option !</h2>
+
+     <h2> User : {{user}}</h2>
+
+     <h2> Email : {{user.email}}</h2>
+    {% if user.username != "admin" %}
+    <br>
+    <div class="w3-center">
+        <br><br>
+            <div class="w3-bar">
+                <button class="w3-button w3-round-xlarge"  ><a href="{% url 'subjects:index' %}">Subjects</a></button>
+                </div>
+                </div>
+                <div class="w3-center">
+        <br><br>
+            <div class="w3-bar">
+                <button class="w3-button w3-round-xlarge"  ><a href="{% url 'subjects:Course' %}">Course</a></button>
+                </div>
+                </div>
+    {% endif %}
+    {% else %}
+      <form method="post" action="{% url 'login' %}" class="box">
+          {% csrf_token %}
+      <p><h2>You are not logged in</h2></p>
+      <input type="submit" name="" value="Login">
+    {% endif %}
+    <!-- <ul class="nav_links">
+
+        <!--<li><a href="https://ide-6bd6267e6ac441ff8a573303d9997bd7-8080.cs50.ws/admin/" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Edit data</a></li>
+        <!-- <div class="navigation">
+	    <a class="button" href="{% url 'logout' %}">
+         <div class="logout">LOGOUT</div>
+	    </a>
+        </div> -->
+        <br><br>
+        {% if user.username == "admin" %}
+        <div class="w3-center">
+            <div class="w3-bar">
+                <button class="w3-button w3-round-xlarge" ><a href="https://ide-6bd6267e6ac441ff8a573303d9997bd7-8080.cs50.ws/admin/">Edit data</a></button>
+                </div>
+                </div>
+        </ul>
+
+        {% endif %}
+
+
+    {% endblock %}
+
+
+<!-- <li><a href="https://ide-6bd6267e6ac441ff8a573303d9997bd7-8080.cs50.ws/admin/" class="round green">Login<span class="round">That is, if you are an admin.</span></a></li>
+  <li><a href="https://ide-6bd6267e6ac441ff8a573303d9997bd7-8080.cs50.ws/admin/" class="round red">Sign Up<span -->
+
+ 

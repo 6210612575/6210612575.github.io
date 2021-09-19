@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+      @import url(https://fonts.googleapis.com/css?family=Oswald:400);
+      @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+      body{
+        margin: 0;
+        padding: 0;
+        font-family: 'Ubuntu', sans-serif;
+        background:  black;
+          }
+      .box{
+        width: 600px;
+        padding: 50px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: #191919;
+        text-align: center;
+      }
+      .box h1 {
+        color: white;
+        text-transform: uppercase;
+        font-weight: 500;
+        font-weight: bold;
+      }
+      .box h3 {
+        color: white;
+        text-transform: lowercase;
+        font-weight: 200;
+      }
+      .box input[type="text"],.box input[type="password"]{
+        border:0;
+        background: none;
+        display: block;
+        margin: 20px auto;
+        text-align: center;
+        border: 2px solid #3498db;
+        padding: 14px 4px;
+        width: 350px;
+        outline: none;
+        color: white;
+        border-radius: 24px;
+        transition: 0.25s;
+      }
+      .box input[type="text"]:focus,.box input[type="password"]:focus{
+        width: 380px;
+        border-color: #2ecc71;
+      }
+      .box input[type="submit"]{
+        border:0;
+        background: none;
+        display: block;
+        margin: 20px auto;
+        text-align: center;
+        border: 2px solid #3498db;
+        padding: 14px 60px;
+        outline: none;
+        color: white;
+        border-radius: 24px;
+        transition: 0.25s;
+        cursor: pointer;
+      }
+      .box input[type="submit"]:hover{
+        background: #2ecc71;
+      }
+      h1 {
+        color: #95a5a6;
+        font-weight: 500;
+        font-weight: bold;
+      }
+      h2 {
+        color: white;
+        font-weight: 200;
+        font-weight: bold;
+      }
+
+     li, a, button{
+       font-weight: 500;
+       font-size: 16px;
+       color: #edf0f1;
+       text-decoration: none;
+     }
+
+      h4 {
+        color: #bdc3c7;
+        font-weight: 200;
+
+      }
+      * {
+        box-sizing: border-box;
+        margin:0;
+        padding: 0;
+      }
+      header{
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        padding: 0px 10%;
+      }
+      .nav_links{
+        list-style: none;
+      }
+      .nav_links li{
+        display: inline-block;
+        padding: 0px 20px;
+      }
+      .nav_links li a{
+        transition: all 0.3s ease 0s;
+      }
+      .nav_links li a:hover{
+        color: #0088a9;
+      }
+      button {
+        margin-left: 20px;
+        padding: 12px 25px;
+        background-color:#ff0047;
+        border: none
+        border-radius: 50px;
+        cursor: pointer;
+        transition: all 0.3s ease 0s;
+      }
+      button:hover {
+        background-color: rgba(0,136,169,0);
+      }
+     .logo{
+       margin-right: auto;
+       color: black;
+     }
+     nav{
+                background: white;
+                height: 100px;
+                width: 100%;
+            }
+      h3 {
+        color: white;
+        font-weight: 180;
+        font-weight: bold;
+      }
+
+
+
+    </style>
+
+  <center><meta charset="utf-8">
+  <title>{% block title %}Log in{% endblock %}</title></center>
+</head>
+<body>
+  <main><center>
+    {% block content %}
+    {% endblock %}</center>
+  </main>
+</body>
+</html>

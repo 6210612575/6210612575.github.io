@@ -1,0 +1,34 @@
+{% extends "subjects/layout.html" %}
+
+
+{% block body %}
+    <nav>
+
+    <label class="logo" ><a href="{% url 'subjects:index' %}">Subject</a></label>
+    <ul>
+    <li><a class="active" href="https://ide-6bd6267e6ac441ff8a573303d9997bd7-8080.cs50.ws/">HOME</a></li>
+
+    <li><a href="{% url 'subjects:Course' %}">course</a></li>
+    </ul>
+    </nav>
+    <br><br>
+    <center><h2>COURSE</h2></center><br>
+     <center><TABLE>
+             <thead>
+            <tr>
+                <TH> Subject ID</TH>
+                <TH> Subject Name</TH>
+            </tr>
+            </thead>
+
+
+    {% for list_s in course %}
+    <TR>
+         <TD>{{list_s.subject_code}}</TD>
+         <TD>{{ list_s.subject_name }}</TD>
+         </TR>
+    {% endfor %}
+   </TABLE></center>
+
+
+{% endblock %}
