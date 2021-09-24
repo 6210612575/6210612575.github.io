@@ -1,0 +1,12 @@
+asgiref==3.4.1
+cffi==1.14.6
+cryptography==3.4.8
+Django==3.2.6
+django-crispy-forms==1.12.0
+gunicorn
+Pillow==8.3.2
+pycparser==2.20
+pytz==2021.1
+sqlparse==0.4.1
+whitenoise==5.3.0
+django-heroku
