@@ -52,19 +52,12 @@
       <p><h2>You are not logged in</h2></p>
       <input type="submit" name="" value="Login">
     {% endif %}
-    <!-- <ul class="nav_links">
-
-        <!--<li><a href="https://ide-6bd6267e6ac441ff8a573303d9997bd7-8080.cs50.ws/admin/" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Edit data</a></li>
-        <!-- <div class="navigation">
-	    <a class="button" href="{% url 'logout' %}">
-         <div class="logout">LOGOUT</div>
-	    </a>
-        </div> -->
+   
         <br><br>
         {% if user.username == "admin" %}
         <div class="w3-center">
             <div class="w3-bar">
-                <button class="w3-button w3-round-xlarge" ><a href="https://ide-6bd6267e6ac441ff8a573303d9997bd7-8080.cs50.ws/admin/">Edit data</a></button>
+                <button class="w3-button w3-round-xlarge" ><a href="{% url 'admin:index' %}">Edit data</a></button>
                 </div>
                 </div>
         </ul>
