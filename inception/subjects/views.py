@@ -44,7 +44,7 @@ def enroll (request,subject_id):
     for x in me:
         print(request.user in x.studentInClass.all())
 
-    if subject.limited_seat < 1:
+    if subject.seat < 1:
             Subject.objects.filter(pk=subject_id).update(status="full")
     elif  request.user not in x.studentInClass.all():
             subject.studentInClass.add(request.user)
