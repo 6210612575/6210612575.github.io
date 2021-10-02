@@ -6,14 +6,14 @@
 
     <label class="logo" ><a href="{% url 'subjects:index' %}">Subject</a></label>
     <ul>
-    <li><a class="active" href="https://ide-6bd6267e6ac441ff8a573303d9997bd7-8080.cs50.ws/">HOME</a></li>
+    <li><a class="active" href="{% url 'home' %}">HOME</a></li>
 
     <li><a href="{% url 'subjects:Course' %}">course</a></li>
     </ul>
     </nav><br>
 
     <center><TABLE>
-
+            
             <TR>
                 <TH> Subject ID</TH>
                 <TH> Subject Name</TH>
@@ -28,8 +28,6 @@
          <TD>{{ list_s.status }}</TD>
          </TR>
     {% endfor %}
-
-
 
     </TABLE></center>
 
